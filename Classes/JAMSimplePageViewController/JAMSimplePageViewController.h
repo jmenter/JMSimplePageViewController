@@ -28,4 +28,7 @@
 - (id)initWithViewControllers:(NSArray *)viewControllers transitionStyle:(UIPageViewControllerTransitionStyle)style;
 - (id)initWithViewControllerClassNames:(NSArray *)classNames transitionStyle:(UIPageViewControllerTransitionStyle)style;
 
+
+- (void)setupPageWithCurrentPage:(NSInteger)currentPageIndex;
+
 @end

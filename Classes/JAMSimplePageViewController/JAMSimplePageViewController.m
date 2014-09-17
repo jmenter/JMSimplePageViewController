@@ -119,8 +119,12 @@ static const CGFloat kUIPageControlHeight = 36.f;
 
 -(void)pageControlWasTapped:(UIPageControl *)pageControl;
 {
-    [self setViewControllers:@[self.controllers[pageControl.currentPage]]
-                   direction:pageControl.currentPage > self.currentPageIndex ? UIPageViewControllerNavigationDirectionForward : UIPageViewControllerNavigationDirectionReverse
+    [self setupPageWithCurrentPage:pageControl.currentPage];
+}
+
+- (void)setupPageWithCurrentPage:(NSInteger)currentPageIndex {
+    [self setViewControllers:@[self.controllers[currentPageIndex]]
+                   direction:currentPageIndex > self.currentPageIndex ? UIPageViewControllerNavigationDirectionForward : UIPageViewControllerNavigationDirectionReverse
                     animated:YES
                   completion:nil];
 }
